@@ -1,0 +1,73 @@
+.lampu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Spasi antara setiap lampu */
+  margin-bottom: 1rem; /* Spasi di bawah lampu sebelum toggle all switch */
+}
+
+.lampu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-switch,
+.toggle-all-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Sesuaikan dengan ukuran toggle switch */
+  height: 34px; /* Sesuaikan dengan ukuran toggle switch */
+}
+
+.toggle-switch input,
+.toggle-all-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .toggle-slider {
+  background-color: #2196f3;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+#toggle-all-status {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem; /* Spasi antara toggle switch dan teks status */
+}
+
+.toggle-all-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem; /* Spasi di atas toggle all switch */
+}
